@@ -41,12 +41,9 @@
 </head>
 <body class="bg-[#F4F7F4] text-[#2D3B32] antialiased overflow-x-hidden selection:bg-[#E8EDE9] selection:text-[#2D3B32]">
 
-    <!-- Background Music Audio (Romantis .mp3 valid) -->
-    <!-- Background Music Player -->
+    <!-- Background Music Player (Menggunakan direct audio stream stabil) -->
     <audio id="bg-music" src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf7f6.mp3?filename=romantic-guitars-112133.mp3" preload="auto" loop></audio>
-        Your browser does not support the audio element.
-    </audio>
-
+    
     <!-- Floating Music Control Button -->
     <div id="music-control" class="fixed bottom-5 right-5 z-45 hidden">
         <button onclick="toggleMusic()" class="w-12 h-12 bg-[#2D3B32] text-[#F4F7F4] rounded-full shadow-2xl flex items-center justify-center border border-[#C5A059] hover:scale-110 transition cursor-pointer">
@@ -87,7 +84,7 @@
         </div>
 
         <div class="z-10 pb-4 text-xs text-stone-400 font-light">
-            Designed & Developed with care by Nurwulan Dari
+            Designed & Developed with care by Fajri Yanuar Shiddiq Juanda
         </div>
     </div>
 
@@ -151,7 +148,6 @@
                     <!-- Groom -->
                     <div class="bg-white p-8 rounded-3xl shadow-sm border border-[#d8e2da] text-center">
                         <div class="w-36 h-36 mx-auto rounded-full overflow-hidden mb-5 border-2 border-[#C5A059] shadow-inner">
-                            <!-- Ganti ID_FOTO_PRIA dengan ID file foto Yuda di Google Drive -->
                             <img src="https://lh3.googleusercontent.com/d/1E8pQ7VMT407F4c5t8qahPafVD9yrrs2N" alt="Groom" class="w-full h-full object-cover">
                         </div>
                         <h3 class="font-playfair text-2xl font-bold text-[#2D3B32]">Yuda</h3>
@@ -162,7 +158,6 @@
                     <!-- Bride -->
                     <div class="bg-white p-8 rounded-3xl shadow-sm border border-[#d8e2da] text-center">
                         <div class="w-36 h-36 mx-auto rounded-full overflow-hidden mb-5 border-2 border-[#C5A059] shadow-inner">
-                            <!-- Ganti ID_FOTO_WANITA dengan ID file foto Elsa di Google Drive -->
                             <img src="https://lh3.googleusercontent.com/d/1-xXRkRG1r3J8Z-f1LZPNzwetw5DkYhN0" alt="Bride" class="w-full h-full object-cover">
                         </div>
                         <h3 class="font-playfair text-2xl font-bold text-[#2D3B32]">Elsa A.P</h3>
@@ -280,34 +275,23 @@
                 </div>
 
                 <div class="space-y-12 border-l-2 border-[#C5A059]/40 pl-6 md:pl-10 ml-4 md:ml-32">
-                    <!-- Timeline Item 1 -->
                     <div class="relative">
                         <span class="absolute -left-[31px] md:-left-[51px] top-0 w-6 h-6 rounded-full bg-[#2D3B32] border-4 border-[#C5A059]"></span>
                         <span class="text-xs font-bold text-[#C5A059] uppercase tracking-wider">Tahun 2022</span>
                         <h3 class="font-playfair text-xl font-bold text-[#2D3B32] mt-1 mb-2">Pertama Kali Bertemu</h3>
-                        <p class="text-[#4F6355] text-sm leading-relaxed">
-                            Entahlah
-                        </p>
+                        <p class="text-[#4F6355] text-sm leading-relaxed">Entahlah</p>
                     </div>
-
-                    <!-- Timeline Item 2 -->
                     <div class="relative">
                         <span class="absolute -left-[31px] md:-left-[51px] top-0 w-6 h-6 rounded-full bg-[#2D3B32] border-4 border-[#C5A059]"></span>
                         <span class="text-xs font-bold text-[#C5A059] uppercase tracking-wider">Tahun 2024</span>
                         <h3 class="font-playfair text-xl font-bold text-[#2D3B32] mt-1 mb-2">Masa Perjuangan Bersama</h3>
-                        <p class="text-[#4F6355] text-sm leading-relaxed">
-                            Entahlah
-                        </p>
+                        <p class="text-[#4F6355] text-sm leading-relaxed">Entahlah</p>
                     </div>
-
-                    <!-- Timeline Item 3 -->
                     <div class="relative">
                         <span class="absolute -left-[31px] md:-left-[51px] top-0 w-6 h-6 rounded-full bg-[#2D3B32] border-4 border-[#C5A059]"></span>
                         <span class="text-xs font-bold text-[#C5A059] uppercase tracking-wider">Tahun 2026</span>
                         <h3 class="font-playfair text-xl font-bold text-[#2D3B32] mt-1 mb-2">Komitmen & Lamaran</h3>
-                        <p class="text-[#4F6355] text-sm leading-relaxed">
-                            Dengan restu penuh dari kedua orang tua dan keluarga besar, kami memutuskan untuk mengikat janji suci melalui proses lamaran resmi untuk melangkah ke jenjang pernikahan.
-                        </p>
+                        <p class="text-[#4F6355] text-sm leading-relaxed">Dengan restu penuh dari kedua orang tua dan keluarga besar, kami memutuskan untuk mengikat janji suci melalui proses lamaran resmi untuk melangkah ke jenjang pernikahan.</p>
                     </div>
                 </div>
             </div>
@@ -327,7 +311,7 @@
                     <div class="p-4 bg-[#F4F7F4] rounded-2xl border border-[#d8e2da] flex justify-between items-center">
                         <div>
                             <p class="text-xs text-[#4F6355] font-semibold uppercase">Mandiri</p>
-                            <p id="acc-bca" class="font-mono font-bold text-[#2D3B32] text-base mt-1">1234567890</p>
+                            <p class="font-mono font-bold text-[#2D3B32] text-base mt-1">1234567890</p>
                             <p class="text-xs text-[#4F6355] mt-0.5">a.n. Elsa A.P</p>
                         </div>
                         <button onclick="copyToClipboard('1234567890', 'BCA')" class="bg-[#2D3B32] hover:bg-[#3E4F43] text-[#F4F7F4] text-xs font-semibold px-4 py-2.5 rounded-xl transition shadow">
@@ -337,7 +321,7 @@
                     <div class="p-4 bg-[#F4F7F4] rounded-2xl border border-[#d8e2da] flex justify-between items-center">
                         <div>
                             <p class="text-xs text-[#4F6355] font-semibold uppercase">Mandiri / E-Wallet (Gopay/OVO)</p>
-                            <p id="acc-mandiri" class="font-mono font-bold text-[#2D3B32] text-base mt-1">0899999999999</p>
+                            <p class="font-mono font-bold text-[#2D3B32] text-base mt-1">0899999999999</p>
                             <p class="text-xs text-[#4F6355] mt-0.5">a.n. Elsa A.P</p>
                         </div>
                         <button onclick="copyToClipboard('0987654321', 'Mandiri')" class="bg-[#2D3B32] hover:bg-[#3E4F43] text-[#F4F7F4] text-xs font-semibold px-4 py-2.5 rounded-xl transition shadow">
@@ -383,9 +367,7 @@
                 <!-- Guestbook Comments List -->
                 <div class="bg-[#F4F7F4] p-6 rounded-3xl border border-[#d8e2da]">
                     <h3 class="font-playfair text-xl font-bold text-[#2D3B32] mb-4">Daftar Ucapan Sahabat</h3>
-                    <div id="commentsList" class="space-y-4 max-h-80 overflow-y-auto pr-1">
-                        <!-- Dynamic comments injected here -->
-                    </div>
+                    <div id="commentsList" class="space-y-4 max-h-80 overflow-y-auto pr-1"></div>
                 </div>
             </div>
         </section>
@@ -394,7 +376,7 @@
         <footer class="py-12 px-6 bg-[#2D3B32] text-stone-400 text-center border-t border-[#3E4F43]">
             <h3 class="font-playfair text-2xl text-[#F4F7F4] font-bold mb-2">Yuda & Elsa A.P</h3>
             <p class="text-xs tracking-widest uppercase text-[#C5A059] mb-6">Terima Kasih atas Doa & Restunya</p>
-            <p class="text-[11px] text-stone-500">Designed & Developed with care by Nurwulan Dari</p>
+            <p class="text-[11px] text-stone-500">Designed & Developed with care by Fajri Yanuar Shiddiq Juanda</p>
         </footer>
 
     </div>
@@ -433,14 +415,15 @@
             mainContent.classList.remove('opacity-0');
             window.scrollTo({ top: 0, behavior: 'smooth' });
 
-            // Start playing background music automatically
+            // Munculkan tombol kontrol musik & paksa play
+            musicControl.classList.remove('hidden');
             bgMusic.play().then(() => {
                 isPlaying = true;
-                musicControl.classList.remove('hidden');
                 musicIcon.className = "fa-solid fa-music animate-spin";
             }).catch(error => {
-                console.log("Autoplay prevented by browser:", error);
-                musicControl.classList.remove('hidden');
+                console.log("Audio play diblokir browser:", error);
+                isPlaying = false;
+                musicIcon.className = "fa-solid fa-volume-xmark";
             });
         }
 
@@ -448,22 +431,28 @@
             if (isPlaying) {
                 bgMusic.pause();
                 isPlaying = false;
-                musicIcon.className = "fa-solid fa-volume-xmark";
+                musicIcon.className = "fa-solid fa-volume-xmark animate-none";
             } else {
-                bgMusic.play();
-                isPlaying = true;
-                musicIcon.className = "fa-solid fa-music animate-spin";
+                bgMusic.play().then(() => {
+                    isPlaying = true;
+                    musicIcon.className = "fa-solid fa-music animate-spin";
+                }).catch(e => {
+                    console.log("Gagal memutar musik:", e);
+                });
             }
         }
 
-        // 3. Countdown Timer (Target Date)
-        const weddingDate = new Date("2026-12-31T09:00:00").getTime();
-        const timer = setInterval(function() {
+        // 3. Countdown Timer (Target Date: 29 Maret 2027)
+        function updateCountdown() {
+            const weddingDate = new Date("2027-03-29T08:00:00").getTime();
             const now = new Date().getTime();
             const distance = weddingDate - now;
 
             if (distance < 0) {
-                clearInterval(timer);
+                document.getElementById("days").innerText = "0";
+                document.getElementById("hours").innerText = "0";
+                document.getElementById("minutes").innerText = "0";
+                document.getElementById("seconds").innerText = "0";
                 return;
             }
 
@@ -472,11 +461,20 @@
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            document.getElementById("days").innerText = days;
-            document.getElementById("hours").innerText = hours;
-            document.getElementById("minutes").innerText = minutes;
-            document.getElementById("seconds").innerText = seconds;
-        }, 1000);
+            const daysEl = document.getElementById("days");
+            const hoursEl = document.getElementById("hours");
+            const minutesEl = document.getElementById("minutes");
+            const secondsEl = document.getElementById("seconds");
+
+            if (daysEl) daysEl.innerText = days;
+            if (hoursEl) hoursEl.innerText = hours;
+            if (minutesEl) minutesEl.innerText = minutes;
+            if (secondsEl) secondsEl.innerText = seconds;
+        }
+
+        // Jalankan fungsi setiap detik
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Panggil sekali di awal agar langsung tampil
 
         // 4. Copy to Clipboard Utility
         function copyToClipboard(text, bankName) {
