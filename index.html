@@ -41,9 +41,9 @@
 </head>
 <body class="bg-[#F4F7F4] text-[#2D3B32] antialiased overflow-x-hidden selection:bg-[#E8EDE9] selection:text-[#2D3B32]">
 
-    <!-- Background Music Player (Ganti src dengan link file MP3 Anda di GitHub atau hosting publik) -->
-    <audio id="bg-music" src="nama-file-lagu.mp3" preload="auto" loop></audio>
-    
+    <!-- Background Music Player (Menggunakan direct audio stream stabil) -->
+    <audio id="bg-music" src="https://raw.githubusercontent.com/wulan2703/Undangan/main/arvian-dwi-ft-tri-suaka-melepas-lajang.mp3" preload="auto" loop></audio>
+
     <!-- Floating Music Control Button -->
     <div id="music-control" class="fixed bottom-5 right-5 z-45 hidden">
         <button onclick="toggleMusic()" class="w-12 h-12 bg-[#2D3B32] text-[#F4F7F4] rounded-full shadow-2xl flex items-center justify-center border border-[#C5A059] hover:scale-110 transition cursor-pointer">
@@ -175,19 +175,19 @@
             
             <div class="grid grid-cols-4 gap-3 max-w-md mx-auto">
                 <div class="bg-[#2D3B32] text-[#F4F7F4] p-4 rounded-2xl shadow border border-[#C5A059]/40">
-                    <span id="days" class="font-playfair text-2xl md:text-3xl font-bold block text-[#C5A059]">0</span>
+                    <span id="days" class="font-playfair text-2xl md:text-3xl font-bold block text-[#C5A059]">00</span>
                     <span class="text-[10px] uppercase tracking-wider text-stone-300">Hari</span>
                 </div>
                 <div class="bg-[#2D3B32] text-[#F4F7F4] p-4 rounded-2xl shadow border border-[#C5A059]/40">
-                    <span id="hours" class="font-playfair text-2xl md:text-3xl font-bold block text-[#C5A059]">0</span>
+                    <span id="hours" class="font-playfair text-2xl md:text-3xl font-bold block text-[#C5A059]">00</span>
                     <span class="text-[10px] uppercase tracking-wider text-stone-300">Jam</span>
                 </div>
                 <div class="bg-[#2D3B32] text-[#F4F7F4] p-4 rounded-2xl shadow border border-[#C5A059]/40">
-                    <span id="minutes" class="font-playfair text-2xl md:text-3xl font-bold block text-[#C5A059]">0</span>
+                    <span id="minutes" class="font-playfair text-2xl md:text-3xl font-bold block text-[#C5A059]">00</span>
                     <span class="text-[10px] uppercase tracking-wider text-stone-300">Menit</span>
                 </div>
                 <div class="bg-[#2D3B32] text-[#F4F7F4] p-4 rounded-2xl shadow border border-[#C5A059]/40">
-                    <span id="seconds" class="font-playfair text-2xl md:text-3xl font-bold block text-[#C5A059]">0</span>
+                    <span id="seconds" class="font-playfair text-2xl md:text-3xl font-bold block text-[#C5A059]">00</span>
                     <span class="text-[10px] uppercase tracking-wider text-stone-300">Detik</span>
                 </div>
             </div>
@@ -314,7 +314,17 @@
                             <p class="font-mono font-bold text-[#2D3B32] text-base mt-1">1234567890</p>
                             <p class="text-xs text-[#4F6355] mt-0.5">a.n. Elsa A.P</p>
                         </div>
-                        <button onclick="copyToClipboard('1234567890', 'Mandiri')" class="bg-[#2D3B32] hover:bg-[#3E4F43] text-[#F4F7F4] text-xs font-semibold px-4 py-2.5 rounded-xl transition shadow">
+                        <button onclick="copyToClipboard('1234567890', 'BCA')" class="bg-[#2D3B32] hover:bg-[#3E4F43] text-[#F4F7F4] text-xs font-semibold px-4 py-2.5 rounded-xl transition shadow">
+                            <i class="fa-regular fa-copy mr-1 text-[#C5A059]"></i> Salin
+                        </button>
+                    </div>
+                    <div class="p-4 bg-[#F4F7F4] rounded-2xl border border-[#d8e2da] flex justify-between items-center">
+                        <div>
+                            <p class="text-xs text-[#4F6355] font-semibold uppercase">Mandiri / E-Wallet (Gopay/OVO)</p>
+                            <p class="font-mono font-bold text-[#2D3B32] text-base mt-1">0899999999999</p>
+                            <p class="text-xs text-[#4F6355] mt-0.5">a.n. Elsa A.P</p>
+                        </div>
+                        <button onclick="copyToClipboard('0987654321', 'Mandiri')" class="bg-[#2D3B32] hover:bg-[#3E4F43] text-[#F4F7F4] text-xs font-semibold px-4 py-2.5 rounded-xl transition shadow">
                             <i class="fa-regular fa-copy mr-1 text-[#C5A059]"></i> Salin
                         </button>
                     </div>
@@ -391,7 +401,7 @@
             loadComments();
         });
 
-        // 2. Open Invitation Action & Music Player Trigger (Mulai dari Menit ke-1 / Detik ke-60)
+        // 2. Open Invitation Action & Music Player Trigger
         let isPlaying = false;
         const bgMusic = document.getElementById('bg-music');
         const musicControl = document.getElementById('music-control');
@@ -405,19 +415,13 @@
             mainContent.classList.remove('opacity-0');
             window.scrollTo({ top: 0, behavior: 'smooth' });
 
-            // Tampilkan tombol kontrol musik
+            // Munculkan tombol kontrol musik & paksa play
             musicControl.classList.remove('hidden');
-
-            // Atur mulai dari detik ke-60 (Menit ke-1)
-            bgMusic.currentTime = 60;
-
-            // Muat dan putar audio dengan aman
-            bgMusic.load();
             bgMusic.play().then(() => {
                 isPlaying = true;
                 musicIcon.className = "fa-solid fa-music animate-spin";
             }).catch(error => {
-                console.log("Autoplay dicegah browser, silakan klik tombol musik manual:", error);
+                console.log("Audio play diblokir browser:", error);
                 isPlaying = false;
                 musicIcon.className = "fa-solid fa-volume-xmark";
             });
@@ -438,9 +442,9 @@
             }
         }
 
-        // 3. Countdown Timer (Target Date: 29 Maret 2026)
+        // 3. Countdown Timer (Target Date: 29 Maret 2027)
         function updateCountdown() {
-            const weddingDate = new Date("2026-03-29T08:00:00").getTime();
+            const weddingDate = new Date("2027-03-29T08:00:00").getTime();
             const now = new Date().getTime();
             const distance = weddingDate - now;
 
@@ -468,8 +472,9 @@
             if (secondsEl) secondsEl.innerText = seconds;
         }
 
+        // Jalankan fungsi setiap detik
         setInterval(updateCountdown, 1000);
-        updateCountdown();
+        updateCountdown(); // Panggil sekali di awal agar langsung tampil
 
         // 4. Copy to Clipboard Utility
         function copyToClipboard(text, bankName) {
